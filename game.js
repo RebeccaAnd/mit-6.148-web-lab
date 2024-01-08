@@ -1,5 +1,3 @@
-const SNAKE_SPEED = 5;
-
 const gameBoard = document.getElementById('game-board');
 
 const main = () => {
@@ -12,9 +10,10 @@ setInterval(main, 1000 / SNAKE_SPEED);
 const update = () => {
   console.log('Updating');
   // TODO 2.3: Update the snake here
+  updateSnake();
 };
 
 const draw = () => {
-  gameBoard.innerHTML = '';
+  gameBoard.innerHTML = "";
   drawSnake(gameBoard);
 };

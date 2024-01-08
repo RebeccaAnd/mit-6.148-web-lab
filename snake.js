@@ -1,17 +1,36 @@
-// TODO 2.1: Create the snake
+// TODO: fill me in!
+const SNAKE_SPEED = 5;
 
-// TODO 2.2: Create a function that updates the snake
-// Hint: Search for the documentation for the Array pop() and unshift() methods
-// in the MDN docs.
+const snakeBody = [
+  { x: 11, y: 11 },
+  { x: 11, y: 10 },
+  { x: 11, y: 9 }
+];
 
-// Don't change this function!
+const updateSnake = () => {
+  // remove tail 
+  snakeBody.pop();
+
+  //move the head 
+  const newHead = {...snakeBody[0]};
+  newHead.x += 0;
+  newHead.y += 1;
+
+  snakeBody.unshift(newHead);
+
+}
+
+
+
+
+  // Don't change this function!
 const drawSnake = (gameBoard) => {
   for (let i = 0; i < snakeBody.length; i++) {
-    const segment = snakeBody[i];
-    const snakeElement = document.createElement('div');
-    snakeElement.style.gridRowStart = segment.y;
-    snakeElement.style.gridColumnStart = segment.x;
-    snakeElement.classList.add('snake');
-    gameBoard.appendChild(snakeElement);
+      const segment = snakeBody[i];
+      const snakeElement = document.createElement("div");
+      snakeElement.style.gridRowStart = segment.y;
+      snakeElement.style.gridColumnStart = segment.x;
+      snakeElement.classList.add("snake");
+      gameBoard.appendChild(snakeElement);
   }
-};
+}
