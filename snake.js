@@ -29,3 +29,7 @@ const drawSnake = (gameBoard) => {
     gameBoard.appendChild(snakeElement);
   }
 };
+
+const isGameOver = () =>{
+  return snakeOutOfBounds() || snakeIntersectSelf();
+}
