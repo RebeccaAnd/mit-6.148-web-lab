@@ -8,11 +8,12 @@ const Profile = () => {
 
   const incrementCatHappiness = () => {
     // TODO Step 2: Implement function to update the state of cat happiness when user clicks on picture
+    setCatHappiness(catHappiness + 1);
   };
 
   return (
     <div>
-      <div className="Profile-avatarContainer">
+      <div className="Profile-avatarContainer" onClick={incrementCatHappiness}>
         <div className="Profile-avatar" />
       </div>
       <h1 className="Profile-name u-textCenter">YOUR NAME HERE</h1>
