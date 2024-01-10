@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "@reach/router";
 import "./NavBar.css";
 
 /**
@@ -8,8 +8,12 @@ import "./NavBar.css";
 const NavBar = () => {
   return (
     <nav className="NavBar-container">
-      <div className="NavBar-title">Catbook</div>
+      <div className="NavBar-title u-inlineBlock">Catbook</div>
       {/* TODO (step5): implement links to pages */}
+      <div className="NavBar-linkContainer u-inlineBlock">
+      <Link className="NavBar-link" to="/">Home</Link>
+      <Link className="NavBar-link" to="/profile">Profile</Link>
+      </div>
     </nav>
   );
 };
