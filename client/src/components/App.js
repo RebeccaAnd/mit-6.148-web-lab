@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "./modules/NavBar.js";
 import Profile from "./pages/Profile.js";
 // TODO (step0): import Feed
+import Feed from "./pages/Feed.js";
 // TODO (step5): import Router and NotFound
 
 // To use styles, import the necessary CSS files
@@ -18,8 +19,9 @@ const App = () => {
     <>
       <NavBar />
       <div className="App-container">
-        <Profile />
+        {/* <Profile /> */}
         {/* TODO (step0): render Feed instead of Profile */}
+        <Feed />
         {/* TODO (step5): use Router to route between pages */}
       </div>
     </>
