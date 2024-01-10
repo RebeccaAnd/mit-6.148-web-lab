@@ -3,6 +3,7 @@ import { get } from "../../utilities";
 // TODO (step6): import SingleStory
 import SingleStory from "./SingleStory";
 // TODO (step7): import SingleComment
+import SingleComment from "./SingleComment";
 // TODO (step8): import NewComment
 // TODO (step9): import CommentsBlock
 
@@ -28,7 +29,22 @@ const Card = (props) => {
     });
   }, []);
 
+  let commentsList = null;
+  const hasComments = comments.length !== 0;
+  if (hasComments) {
+    commentsList = comments.map((commentObj) => (
+      <SingleComment
+      _id={commentObj._id}
+      creator_name={commentObj.creator_name}
+      content={commentObj.content}
+    />
+    ));
+  } else {
+   commentsList = <div>No comments!</div>;
+  }
+
   // TODO (step6): render a SingleStory using props,
+  // and render the comments from state (with JSON.stringify)
   return (
     <div className="Card-container">
         <SingleStory
@@ -36,10 +52,9 @@ const Card = (props) => {
           creator_name={props.creator_name}
           content={props.content}
         />
-        {JSON.stringify(comments)}
+        {commentsList}
       </div>
   )
-  // and render the comments from state (with JSON.stringify)
   // TODO (step7): map comments from state into SingleComment
   // components (refer to Feed)
   // TODO (step8): add in the NewComment component (refer to Feed)
