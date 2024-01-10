@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { get } from "../../utilities";
-import SingleStory from "../modules/SingleStory.js";
+import Card from "../modules/Card.js";
 import { NewStory } from "../modules/NewPostInput.js";
 // TODO (step6): remove SingleStory import, import Card
 
@@ -17,7 +17,7 @@ const Feed = () => {
   const hasStories = stories.length !== 0;
   if (hasStories) {
     storiesList = stories.map((storyObj) => (
-      <SingleStory creator_name={storyObj.creator_name} content={storyObj.content} />
+      <Card _id={storyObj._id} creator_name={storyObj.creator_name} content={storyObj.content} />
     ));
   } else {
     storiesList = <div>No stories!</div>;
