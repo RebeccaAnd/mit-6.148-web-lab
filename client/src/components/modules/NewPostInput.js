@@ -52,7 +52,12 @@ const NewPostInput = (props) => {
  */
 const NewStory = () => {
   // TODO (step4): implement addStory
+  const addStory = (value) => {
+    const body = { content: value };
+    post("/api/story", body);
+  }
   // TODO (step4): implement render
+  return <NewPostInput defaultText="New Story" onSubmit={addStory} />
 };
 
 /**
