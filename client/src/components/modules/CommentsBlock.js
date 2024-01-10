@@ -1,5 +1,7 @@
 import React from "react";
 // TODO (step9): import SingleComment and NewComment
+import SingleComment from "./SingleComment";
+import { NewComment } from "./NewPostInput";
 
 /**
  * @typedef ContentObject
@@ -15,8 +17,23 @@ import React from "react";
  * @param {ContentObject[]} comments
  * @param {ContentObject} story
  */
-const CommentsBlock = () => {
+const CommentsBlock = (props) => {
   // TODO (step9): implement render
+  return (
+    <div className="Card-commentSection">
+      <div className="story-comments">
+        {props.comments.map((comment) => (
+          <SingleComment 
+            key={`SingleComment_${comment._id}`}
+            _id={comment._id}
+            creator_name={comment.creator_name}
+            content={comment.content}
+          />
+        ))}
+        <NewComment storyId={props.storyId} />
+      </div>
+    </div>
+  );
 };
 
 export default CommentsBlock;
