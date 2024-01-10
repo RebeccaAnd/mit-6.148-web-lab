@@ -3,6 +3,7 @@ import { get } from "../../utilities";
 import SingleStory from "./SingleStory.js";
 import SingleComment from "./SingleComment.js";
 // TODO (step8): import NewComment
+import { NewComment } from "./NewPostInput";
 // TODO (step9): import CommentsBlock
 
 import "./Card.css";
@@ -46,6 +47,7 @@ const Card = (props) => {
           content={props.content}
         />
         {commentsList}
+        <NewComment storyId={props._id} />
       </div>
   )
   // TODO (step8): add in the NewComment component (refer to Feed)
