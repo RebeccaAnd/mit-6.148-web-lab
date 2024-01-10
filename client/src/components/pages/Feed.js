@@ -14,9 +14,21 @@ const Feed = () => {
     });
   }, []);
 
+  // step2 if hasStory, map the state (storyobj-the array's parm)
+  let storiesList = null;
+  const hasStories = stories.length !== 0;
+  if (hasStories) {
+    storiesList = stories.map((storyObj) => (
+      <SingleStory creator_name={storyObj.creator_name} content={storyObj.content} />
+    ));
+  } else {
+    storiesList = <div>No stories!</div>
+  }
+
+
   return (
     <div>
-      <SingleStory creator_name="Matt" content="test" />
+      {storiesList}
     </div>
   );
   // TODO (step3): map the state to SingleStory components
